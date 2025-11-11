@@ -4,12 +4,6 @@
     { "src": "index.html", "use": "@vercel/static" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "staticFiles": {
-    "public": "public"
-  }
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
