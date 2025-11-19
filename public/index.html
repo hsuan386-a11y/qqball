@@ -86,13 +86,90 @@ h3 {
 }
 p { font-size:var(--text-m); color:var(--ink-soft); margin:.9rem 0; }
 
-/* Extra */
-.extra-block {
-  background:#fdf4ea;
-  padding:2rem 1.4rem;
-  border-radius:14px;
-  margin-top:3.5rem;
-}
+    /* ========================= */
+    /*        Extra 區塊         */
+    /* ========================= */
+    .extra{
+      margin: calc(var(--block-gap) + .5rem) auto;
+      padding: 2.2rem 1.6rem 2rem;
+      border-radius: 18px;
+      background: radial-gradient(circle at 0 0, rgba(255,230,200,.45), transparent 55%),
+                  radial-gradient(circle at 100% 100%, rgba(210,160,120,.35), transparent 55%),
+                  #fdf4ea;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    .extra h3{
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #5b3b1a;
+      text-align: left;
+      margin-bottom: .9rem;
+    }
+
+    .extra-intro{
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+      line-height: 1.9;
+      margin-bottom: 1.6rem;
+    }
+
+    .extra-grid{
+      display: grid;
+      gap: 1.8rem;
+    }
+
+    .extra-card{
+      background: rgba(255,252,247,.92);
+      border-radius: 14px;
+      padding: 1.1rem 1.1rem 1.3rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,.05);
+      overflow: hidden;
+    }
+
+    .extra-img{
+      width: 100%;
+      max-width: 720px;
+      max-height: 360px;
+      display: block;
+      margin: 0 auto .9rem;
+      border-radius: 12px;
+      object-fit: contain;   /* ✅ 不裁圖，等比完整呈現 */
+    }
+
+    .extra-quote{
+      color: #5b3b1a;
+      font-size: 0.98rem;
+      line-height: 1.9;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+
+    .extra-quote::before{
+      content: "✧";
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    @media (min-width: 900px){
+      .extra{
+        padding: 2.4rem 2rem 2.2rem;
+      }
+      .extra-grid{
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+      .extra-card:last-child{
+        grid-column: 1 / -1;           /* 最後一張（紙袋）單獨置中 */
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      .extra-quote{
+        font-size: 1rem;
+      }
+    }
 
 /* 分享 */
 .share {
@@ -257,27 +334,94 @@ footer a { color:var(--ink-soft); }
   而是一個人做事的方式。</p>
 </section>
 
-<!-- Extra -->
-<section class="extra-block">
-  <h3>🌟 那些靠得更近的職人時刻</h3>
+    <!-- Extra｜那些靠得更近的職人時刻 -->
+    <section class="extra" aria-labelledby="extra">
+      <h3 id="extra">🌟 Extra｜那些靠得更近的職人時刻</h3>
 
-  <p>這裡放著幾張「更貼近的視角」。  
-  有些畫面無需言語，它們自己會說話——  
-  像油花跳起時的亮、粉糰成形時的柔、  
-  夜氣散開時的緩，以及紙袋被暖光照亮的那一刻。</p>
+      <p class="extra-intro">
+        有些細節，只有靠得很近才看得見；<br>
+        而那些看不見的努力，往往是最值得被記住的。
+      </p>
 
-  <p>還有那個夜裡的背影：  
-  一個人、一鍋油、一份被堅持守護的日常。</p>
+      <div class="extra-grid">
 
-  <p>或許，這些不被察覺的小瞬間，  
-  正是手作最動人的地方。</p>
+        <!-- Extra 01：油鍋特寫 -->
+        <article class="extra-card">
+          <figure>
+            <img
+              class="extra-img"
+              src="./qqball_final_extra_01_frypan_closeup.png"
+              alt="油鍋裡金黃地瓜球與油花跳動的特寫畫面"
+              loading="lazy"
+            >
+          </figure>
+          <p class="extra-quote">
+            「有些溫度，只有靠近一點，才看得清楚它的跳動。」
+          </p>
+        </article>
 
-  <img src="qqball_final_extra_01_frypan_closeup.png" class="full-img">
-  <img src="qqball_final_extra_02_dough_closeup.png" class="full-img">
-  <img src="qqball_final_extra_03_frypan_night.png" class="full-img">
-  <img src="qqball_final_extra_04_cart_night_atmos.png" class="full-img">
-  <img src="qqball_final_extra_05_bag_glow_closeup.png" class="full-img">
-</section>
+        <!-- Extra 02：粉糰特寫 -->
+        <article class="extra-card">
+          <figure>
+            <img
+              class="extra-img"
+              src="./qqball_final_extra_02_dough_closeup.png"
+              alt="雙手搓揉地瓜粉糰的近距離畫面"
+              loading="lazy"
+            >
+          </figure>
+          <p class="extra-quote">
+            「只有手，才能讀懂粉糰的性子；那是時間教的語言。」
+          </p>
+        </article>
+
+        <!-- Extra 03：夜裡的油鍋光 -->
+        <article class="extra-card">
+          <figure>
+            <img
+              class="extra-img"
+              src="./qqball_final_extra_03_frypan_night.png"
+              alt="夜色中油鍋與油光交織的畫面"
+              loading="lazy"
+            >
+          </figure>
+          <p class="extra-quote">
+            「夜色會變，但鍋邊的光不會——有人在裡面守著。」
+          </p>
+        </article>
+
+        <!-- Extra 04：夜色攤車 -->
+        <article class="extra-card">
+          <figure>
+            <img
+              class="extra-img"
+              src="./qqball_final_extra_04_cart_night_atmos.png"
+              alt="夜裡街角的攤車與路燈氛圍"
+              loading="lazy"
+            >
+          </figure>
+          <p class="extra-quote">
+            「越是安靜的畫面，越看得見一個人做事的方式。」
+          </p>
+        </article>
+
+        <!-- Extra 05：暖光紙袋特寫 -->
+        <article class="extra-card">
+          <figure>
+            <img
+              class="extra-img"
+              src="./qqball_final_extra_05_bag_glow_closeup.png"
+              alt="雙手捧著裝滿地瓜球的牛皮紙袋特寫"
+              loading="lazy"
+            >
+          </figure>
+          <p class="extra-quote">
+            「有些味道，不是被吃進去的，而是被記住的。」
+          </p>
+        </article>
+
+      </div>
+    </section>
 
 <!-- 幕後手記 -->
 <section>
