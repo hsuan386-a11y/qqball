@@ -1,103 +1,658 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>ＱＱ球職人手作</title>
+  <title>ＱＱ球職人手作｜甜的剛好，心的溫度。</title>
+  <meta name="description" content="夜色裡的攤車，一鍋油、一雙手，一段關於手作溫度的故事。">
 
-<style>
-  body {
-    margin: 0;
-    background: #f8f3ea;
-    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  }
+  <!-- Canonical -->
+  <link rel="canonical" href="https://q-qball.vercel.app/" />
 
-  /* ===== HERO 區 ===== */
-  .hero-wrap {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ＱＱ球職人手作">
+  <meta property="og:url" content="https://q-qball.vercel.app/">
+  <meta property="og:title" content="ＱＱ球職人手作｜甜的剛好，心的溫度。">
+  <meta property="og:description" content="夜色裡的攤車，一鍋油、一雙手，一段關於手作溫度的故事。">
+  <meta property="og:image" content="qqball_final_share_fb.png">
+  <meta property="og:image:alt" content="熱騰騰地瓜球裝在牛皮紙袋，暖光蒸騰">
 
-  /* 封面圖（不裁切，等比縮放） */
-  .hero-img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ＱＱ球職人手作｜甜的剛好，心的溫度。">
+  <meta name="twitter:description" content="夜色裡的攤車，一鍋油、一雙手，一段關於手作溫度的故事。">
+  <meta name="twitter:image" content="qqball_final_share_fb.png">
 
-  /* 安全區：文字會被精準限制在中下方 */
-  .hero-text {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    text-align: center;
+  <!-- Preload hero -->
+  <link rel="preload" as="image" href="qqball_final_00_hero_main.png">
+  <link rel="preload" as="image" href="qqball_final_00_hero_scene_v2.png">
 
-    /* 使用 bottom 讓文字落在安全區（依裝置自動調整） */
-    bottom: 8%;  
-  }
+  <style>
+    :root{
+      --bg:#fff8f1;
+      --ink:#37281c;
+      --ink-soft:#4b3a2f;
+      --accent:#c6783a;
+      --accent-soft:#f0c08b;
+      --card:#fdf4ea;
+      --card-2:#fcf1e5;
+      --footer:#f3e4cf;
+      --max-width:960px;
 
-  /* 三行標題基礎 */
-  .hero-title {
-    margin: 0.35em 0;
-    font-weight: 700;
-    color: #fef4de;  /* 暖奶油白，比純白更柔 */
-    text-shadow: 0 2px 6px rgba(0,0,0,0.35);
-  }
+      --font-base:18px;
+      --font-base-mobile:17px;
 
-  /* ===== 文字尺寸：桌機／iPad（橫向） ===== */
-  @media (min-width: 1025px) {
-    .hero-title.line1 { font-size: 3.2rem; letter-spacing: .05em; }
-    .hero-title.line2 { font-size: 2.45rem; letter-spacing: .04em; }
-    .hero-title.line3 { font-size: 2.65rem; letter-spacing: .06em; }
-    .hero-text { bottom: 10%; }
-  }
-
-  /* ===== iPad 直向 ===== */
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .hero-title.line1 { font-size: 2.75rem; }
-    .hero-title.line2 { font-size: 2.1rem; }
-    .hero-title.line3 { font-size: 2.35rem; }
-    .hero-text { bottom: 9%; }
-  }
-
-  /* ===== 手機 ===== */
-  @media (max-width: 767px) {
-    .hero-title.line1 { font-size: 1.95rem; }
-    .hero-title.line2 { font-size: 1.55rem; }
-    .hero-title.line3 {
-      font-size: 1.75rem;
-      line-height: 1.25;
-      /* 手機自動斷行（最多兩行） */
-      max-width: 90%;
-      margin: 0.45em auto;
+      --hero-height:88vh;
+      --story-img-max-h:62vh;
+      --extra-img-max-h:65vh;
     }
-    .hero-text { bottom: 12%; }
-  }
 
-</style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.9;
+      font-size:var(--font-base);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    @media (max-width:768px){
+      body{font-size:var(--font-base-mobile);}
+    }
+
+    img{max-width:100%;display:block;border-radius:16px;}
+
+    .container{
+      width:min(92%, var(--max-width));
+      margin:0 auto;
+    }
+
+    /* ---------------- Hero ---------------- */
+
+    .hero{
+      position:relative;
+      height:var(--hero-height);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background:#150a00;
+    }
+
+    .hero-picture{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      pointer-events:none;
+    }
+
+    .hero-picture img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      filter:brightness(1.08) contrast(1.03);
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 50% 15%,rgba(255,240,210,.35),transparent 55%),
+        linear-gradient(to bottom,rgba(0,0,0,.20),rgba(0,0,0,.40));
+      pointer-events:none;
+    }
+
+    .hero-text{
+      position:relative;
+      z-index:2;
+      width:min(92%, var(--max-width));
+      color:#fff7ea;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      gap:.45rem;
+    }
+
+    /* 文字垂直位置：落在職人下巴～油鍋上緣之間 */
+    .hero-text-inner{
+      margin:0 auto;
+      max-width:720px;
+      position:relative;
+      top:10vh;  /* 調整整塊往下，避開臉部 */
+    }
+
+    .hero-logo{
+      font-size:.9rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:.3rem;
+      opacity:.9;
+    }
+
+    .hero-title-main{
+      font-size:clamp(2.4rem,3.6vw,3.1rem);
+      font-weight:800;
+      letter-spacing:.08em;
+      margin-bottom:.1rem;
+      text-shadow:0 3px 10px rgba(0,0,0,.45);
+    }
+
+    .hero-title-sub{
+      font-size:clamp(1.3rem,2.1vw,1.6rem);
+      font-weight:600;
+      letter-spacing:.12em;
+      margin-bottom:.7rem;
+      text-shadow:0 2px 8px rgba(0,0,0,.45);
+      color:#ffe0b0;
+    }
+
+    .hero-caption{
+      font-size:1.02rem;
+      line-height:1.8;
+      max-width:40em;
+      margin:0 auto;
+      color:#fbe1c0;
+      text-shadow:0 2px 8px rgba(0,0,0,.6);
+    }
+
+    @media (max-width:768px){
+      .hero{
+        height:88vh;
+      }
+      .hero-text-inner{
+        top:6vh;
+      }
+      .hero-title-main{
+        font-size:2.1rem;
+      }
+      .hero-title-sub{
+        font-size:1.25rem;
+      }
+      .hero-caption{
+        font-size:.98rem;
+      }
+    }
+
+    /* hero 圖片切換：橫向用 scene_v2，直向用 main */
+    .hero-img-main{display:block;}
+    .hero-img-scene{display:none;}
+
+    @media (orientation:landscape) and (min-width:834px){
+      .hero-img-main{display:none;}
+      .hero-img-scene{display:block;}
+      .hero-text-inner{top:8vh;}
+    }
+
+    /* ---------------- 創作說明 & 前言 ---------------- */
+
+    main{padding:2.2rem 0 0;}
+
+    .lead{
+      background:var(--card);
+      border-radius:18px;
+      padding:1.9rem 1.8rem;
+      margin:1.8rem auto;
+      box-shadow:0 2px 10px rgba(0,0,0,.06);
+    }
+
+    .lead h3{
+      font-size:1.2rem;
+      margin-bottom:.9rem;
+      color:#5b3b1a;
+    }
+
+    .lead p{
+      font-size:1.02rem;
+      color:var(--ink-soft);
+      line-height:2;
+      margin:.4rem 0;
+    }
+
+    @media (max-width:768px){
+      .lead{
+        padding:1.6rem 1.4rem;
+        margin:1.6rem auto;
+      }
+      .lead p{font-size:1.0rem;}
+    }
+
+    /* ---------------- 01~05 故事區 ---------------- */
+
+    .story-section{
+      margin:2.4rem auto 0;
+    }
+
+    .story-block{
+      margin:0 auto 2.7rem;
+      padding-bottom:.4rem;
+      border-bottom:1px dashed rgba(165,120,80,.35);
+    }
+
+    .story-inner{
+      max-width:var(--max-width);
+      margin:0 auto;
+    }
+
+    .story-img-wrap{
+      margin:0 auto 1.4rem;
+      text-align:center;
+    }
+
+    .story-img{
+      width:100%;
+      max-width:880px;
+      max-height:var(--story-img-max-h);
+      height:auto;
+      margin:0 auto;
+      object-fit:contain;
+      box-shadow:0 4px 14px rgba(0,0,0,.16);
+      border-radius:18px;
+    }
+
+    .story-text{
+      max-width:760px;
+      margin:0 auto;
+      padding:1.3rem 1.1rem 1.4rem;
+      border-radius:18px;
+      background:linear-gradient(135deg,#fdf4ea 0%,#fff8f1 45%,#fef4e6 100%);
+      box-shadow:0 3px 10px rgba(0,0,0,.05);
+    }
+
+    .story-title{
+      font-size:1.2rem;
+      font-weight:800;
+      color:#5b3b1a;
+      margin-bottom:.6rem;
+      display:inline-block;
+      padding:.25rem .9rem;
+      border-radius:999px;
+      background:rgba(198,120,58,.08);
+      border:1px solid rgba(198,120,58,.25);
+    }
+
+    .story-text p{
+      font-size:1.05rem;
+      color:var(--ink-soft);
+      line-height:2.05;
+      margin:.55rem 0;
+    }
+
+    @media (max-width:768px){
+      .story-img{
+        max-height:60vh;
+      }
+      .story-text{
+        padding:1.1rem 1rem 1.3rem;
+      }
+      .story-title{
+        font-size:1.05rem;
+      }
+      .story-text p{
+        font-size:1.0rem;
+      }
+    }
+
+    /* ---------------- Extra 區 ---------------- */
+
+    .extra-section{
+      margin:2.8rem auto 0;
+    }
+
+    .extra-header{
+      margin-bottom:1.4rem;
+    }
+
+    .extra-header h3{
+      font-size:1.25rem;
+      color:#5b3b1a;
+      margin-bottom:.6rem;
+    }
+
+    .extra-header p{
+      font-size:1.0rem;
+      color:var(--ink-soft);
+      line-height:1.9;
+    }
+
+    .extra-item{
+      margin:2.1rem auto 2.6rem;
+      max-width:var(--max-width);
+    }
+
+    .extra-label{
+      font-size:1.0rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#a0703e;
+      margin-bottom:.4rem;
+    }
+
+    .extra-title{
+      font-size:1.1rem;
+      font-weight:700;
+      color:#5b3b1a;
+      margin-bottom:.8rem;
+    }
+
+    .extra-img-wrap{
+      margin-bottom:.9rem;
+    }
+
+    .extra-img{
+      width:100%;
+      max-width:860px;
+      max-height:var(--extra-img-max-h);
+      height:auto;
+      margin:0 auto;
+      object-fit:contain;
+      border-radius:18px;
+      box-shadow:0 4px 16px rgba(0,0,0,.18);
+    }
+
+    .extra-text{
+      max-width:760px;
+      margin:0 auto;
+      font-size:1.0rem;
+      color:var(--ink-soft);
+      line-height:1.95;
+    }
+
+    .extra-divider{
+      height:1px;
+      width:80%;
+      max-width:680px;
+      margin:2.0rem auto 0;
+      background:linear-gradient(to right,transparent,rgba(160,110,70,.45),transparent);
+    }
+
+    @media (max-width:768px){
+      .extra-img{
+        max-height:62vh;
+      }
+      .extra-text{
+        font-size:.98rem;
+      }
+    }
+
+    /* ---------------- 幕後手記 ---------------- */
+
+    .note-section{
+      margin:2.8rem auto 0;
+    }
+
+    .note-card{
+      background:var(--card-2);
+      border-radius:18px;
+      padding:2rem 1.8rem;
+      box-shadow:0 2px 10px rgba(0,0,0,.06);
+      max-width:var(--max-width);
+      margin:0 auto;
+    }
+
+    .note-card h3{
+      font-size:1.2rem;
+      margin-bottom:.9rem;
+      color:#5b3b1a;
+    }
+
+    .note-card p{
+      font-size:1.02rem;
+      color:var(--ink-soft);
+      line-height:2;
+      margin:.4rem 0;
+    }
+
+    @media (max-width:768px){
+      .note-card{
+        padding:1.7rem 1.4rem;
+      }
+      .note-card p{font-size:1.0rem;}
+    }
+
+    /* ---------------- 分享區 ---------------- */
+
+    .share-section{
+      margin:3rem auto 3.3rem;
+      max-width:var(--max-width);
+    }
+
+    .share-card{
+      background:#fdf4ea;
+      border-radius:18px;
+      padding:2.2rem 1.8rem 2rem;
+      text-align:center;
+      box-shadow:0 2px 10px rgba(0,0,0,.06);
+    }
+
+    .share-card h3{
+      font-size:1.1rem;
+      margin-bottom:.9rem;
+      color:#5b3b1a;
+    }
+
+    .share-card p{
+      font-size:1.0rem;
+      color:var(--ink-soft);
+      line-height:1.9;
+      margin:.2rem 0;
+    }
+
+    .share-buttons{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      margin:1.4rem auto .3rem;
+      flex-wrap:wrap;
+    }
+
+    .share-btn{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:1.3rem;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 3px 10px rgba(0,0,0,.18);
+      transition:.22s ease;
+    }
+    .share-btn.line{background:#00c300;}
+    .share-btn.fb{background:#1877f2;}
+    .share-btn.th{background:#000;}
+
+    .share-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 5px 14px rgba(0,0,0,.25);
+    }
+
+    .share-note{
+      margin-top:.6rem;
+      font-size:.9rem;
+      color:#7a6048;
+    }
+
+    @media (max-width:768px){
+      .share-card{
+        padding:1.9rem 1.4rem 1.8rem;
+      }
+      .share-card p{
+        font-size:.98rem;
+      }
+    }
+
+    /* ---------------- 頁尾 ---------------- */
+
+    footer{
+      background:var(--footer);
+      padding:2.1rem 1rem 1.8rem;
+      text-align:center;
+      color:#5c4b3a;
+      border-top:1px solid #ead7c4;
+      font-size:.96rem;
+    }
+
+    footer .brand-line{
+      margin-bottom:.4rem;
+    }
+
+    footer .slogan{
+      margin-bottom:.9rem;
+    }
+
+    footer .links{
+      font-size:.9rem;
+      line-height:1.9;
+    }
+
+    footer a{
+      color:#5c4b3a;
+      text-decoration:underline;
+    }
+
+    @media (max-width:768px){
+      footer{
+        font-size:.9rem;
+        padding:2rem 1rem 1.9rem;
+      }
+      footer .links{
+        font-size:.88rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ========================= -->
-<!--          HERO 封面        -->
-<!-- ========================= -->
+  <!-- Hero -->
+  <header class="hero" aria-label="封面">
+    <div class="hero-picture">
+      <img src="qqball_final_00_hero_main.png" alt="職人站在油鍋前翻動金黃地瓜球的畫面" class="hero-img-main">
+      <img src="qqball_final_00_hero_scene_v2.png" alt="夜色街角的攤車與油鍋場景" class="hero-img-scene">
+    </div>
+    <div class="hero-overlay"></div>
 
-<section class="hero-wrap">
+    <div class="hero-text">
+      <div class="hero-text-inner">
+        <div class="hero-logo">QQBALL · HANDMADE</div>
+        <div class="hero-title-main">ＱＱ球職人手作</div>
+        <div class="hero-title-sub">甜的剛好｜心的溫度</div>
+        <p class="hero-caption">
+          夜色裡的攤車，一鍋油、一雙手，一段關於手作溫度的故事。
+        </p>
+      </div>
+    </div>
+  </header>
 
-  <!-- 封面圖：直向／橫向都會自動等比完整呈現 -->
-  <img src="qqball_final_00_hero_main.png" alt="封面職人手作場景" class="hero-img" />
+  <main>
 
-  <div class="hero-text">
-    <h1 class="hero-title line1">ＱＱ球職人手作</h1>
-    <h2 class="hero-title line2">甜的剛好</h2>
-    <h2 class="hero-title line3">心的溫度</h2>
-  </div>
+    <section class="container">
+      <!-- 創作說明 -->
+      <section class="lead" aria-labelledby="about">
+        <h3 id="about">📜 創作說明</h3>
+        <p>
+          本作品為個人設計與文案練習。「QQ球職人手作」為虛構主題，
+          以插畫、敘事與品牌氛圍，探索「職人精神 × 手作溫度 × 敘事美學」的可能性。
+        </p>
+        <p>
+          這不是商業作品，而是一份對「手作」的喜愛與致敬。<br>
+          若這些畫面能在您心裡留下一絲柔軟，那便是這份創作最想傳遞的溫度。
+        </p>
+      </section>
 
-</section>
+      <!-- 前言 -->
+      <section class="lead" aria-labelledby="intro">
+        <h3 id="intro">🌤 前言</h3>
+        <p>
+          傍晚的淡水街角，總飄著一股熟悉的香味——<br>
+          金黃地瓜球剛起鍋的聲音，像日常裡最溫柔的問候。
+        </p>
+        <p>
+          故事從一鍋油開始，也從一雙願意把簡單日常做得更好的手開始。
+        </p>
+        <p>
+          請跟我一起靠近這台小攤車；<br>
+          看看一個職人，是如何把每一件小事做到恰如其分。
+        </p>
+      </section>
+    </section>
 
-</body>
-</html>
+    <!-- 故事 01～05 -->
+    <section class="story-section container" aria-label="故事內容">
+
+      <!-- 01 -->
+      <article class="story-block" aria-labelledby="s01">
+        <div class="story-inner">
+          <div class="story-img-wrap">
+            <img src="qqball_final_01_story_frypan.png" alt="金黃地瓜球在油鍋裡翻滾的畫面" class="story-img">
+          </div>
+          <div class="story-text">
+            <div class="story-title" id="s01">01｜天氣轉涼的那天</div>
+            <p>
+              空氣開始變得柔軟，淡水街頭的風也多了幾分涼意。<br>
+              就在轉角，一陣甜香穿過人群——<br>
+              那是剛起鍋的地瓜球，金黃、滾燙，像一顆顆小太陽，在油鍋裡輕輕跳動。
+            </p>
+            <p>
+              我忍不住停下腳步，看著油光翻滾、聽著細碎的滋滋聲。<br>
+              他站在鍋前，動作穩定而沉著，像在傾聽油溫的呼吸；每一次翻動，都凝著長年的累積與手感。
+            </p>
+            <p>
+              他總會把第一次起鍋的地瓜球留給自己，<br>
+              不是為了試味道，而是為了確認——<br>
+              「今天的手感，依舊沒變。」
+            </p>
+            <p>
+              那一瞬間，我忽然明白，<br>
+              這香氣，不只是味道，而是一種信念。
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 -->
+      <article class="story-block" aria-labelledby="s02">
+        <div class="story-inner">
+          <div class="story-img-wrap">
+            <img src="qqball_final_02_story_dough.png" alt="職人雙手搓揉地瓜粉糰的畫面" class="story-img">
+          </div>
+          <div class="story-text">
+            <div class="story-title" id="s02">02｜不只是地瓜球</div>
+            <p>
+              每天清晨，他挑地瓜、削皮、切塊，<br>
+              用手去感受濕度、纖維與甜度。<br>
+              粉糰也堅持用手揉——<br>
+              「機器做得快，但味道會少了點靈魂。」他說。
+            </p>
+            <p>
+              地瓜太濕會黏、太乾會散，<br>
+              每一顆都有自己的脾氣。<br>
+              他一邊按壓、一邊調整粉與水的比例，<br>
+              直到粉糰在掌心裡變得柔軟、飽滿，像是終於找到自己的形狀。
+            </p>
+            <p>
+              每一次按壓，都在確認彈性；<br>
+              每一次下鍋，都聽著油泡從急促轉為溫和——<br>
+              那是地瓜球「準備好了」的訊號。
+            </p>
+            <p>
+              在他眼裡，這不是點心，<br>
+              而是一份每天必須做到「問心無愧」的用心。
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="story-block" aria-labelledby="s03">
+        <div class="story-inner">
+          <div class="story-img-wrap">
+            <img src="qqball_final_03_story_hands.png" alt="職人
