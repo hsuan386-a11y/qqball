@@ -2,629 +2,102 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>QQ球職人手作 ｜ 封面 Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>ＱＱ球職人手作</title>
 
 <style>
-
-/* ----------------------------
-    HERO 區容器
------------------------------ */
-.hero {
-  position: relative;
-  height: 100vh;
-  min-height: 520px;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* 大螢幕：套用橫向封面圖 */
-@media (min-width: 900px) {
-  .hero {
-    background-image: url("qqball_final_00_hero_scene_v2.png");
+  body {
+    margin: 0;
+    background: #f8f3ea;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   }
-}
 
-/* 小螢幕：套用直向封面圖 */
-@media (max-width: 899px) {
-  .hero {
-    background-image: url("qqball_final_00_hero_main.png");
+  /* ===== HERO 區 ===== */
+  .hero-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
   }
-}
 
-/* ----------------------------
-    HERO 文字安全區
------------------------------ */
-.hero-content {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 30vh;         /* 職人下巴以上不放字 */
-  bottom: 38vh;      /* 油鍋上緣以下不放字 */
-  max-width: min(560px, 80vw);
-  padding: 0 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  color: #f9e1c1;
-}
-
-/* ----------------------------
-    文字樣式（桌機）
------------------------------ */
-.hero-kicker {
-  font-size: 0.9rem;
-  letter-spacing: 0.4em;
-  text-indent: 0.4em;
-  margin-bottom: 0.9rem;
-  color: #f4e1c9;
-}
-
-.hero-title {
-  font-size: 2.5rem;
-  letter-spacing: 0.18em;
-  text-indent: 0.18em;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
-  color: #f9e1c1;
-}
-
-.hero-subtitle-en {
-  font-size: 0.95rem;
-  letter-spacing: 0.35em;
-  text-indent: 0.35em;
-  margin-bottom: 1.1rem;
-  color: #f4e1c9;
-}
-
-.hero-tagline {
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-indent: 0.08em;
-  margin-bottom: 0.9rem;
-  color: #f5b782;
-}
-
-.hero-lead {
-  font-size: 1.02rem;
-  line-height: 1.8;
-  letter-spacing: 0.08em;
-  text-indent: 0.08em;
-  color: #f6eadb;
-}
-
-
-/* ----------------------------
-    iPad 直向（中型螢幕）
------------------------------ */
-@media (max-width: 1024px) {
-  .hero-content {
-    top: 32vh;
-    bottom: 32vh;
-    max-width: 78vw;
-    padding: 0 1.75rem;
+  /* 封面圖（不裁切，等比縮放） */
+  .hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
-  .hero-title { font-size: 2.3rem; }
-  .hero-tagline { font-size: 1.2rem; }
-  .hero-lead { font-size: 1rem; }
-}
 
-/* ----------------------------
-    手機版
------------------------------ */
-@media (max-width: 640px) {
-  .hero {
-    height: 100vh;
+  /* 安全區：文字會被精準限制在中下方 */
+  .hero-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+
+    /* 使用 bottom 讓文字落在安全區（依裝置自動調整） */
+    bottom: 8%;  
   }
-  .hero-content {
-    top: 36vh;
-    bottom: 20vh;
-    max-width: 86vw;
-    padding: 0 1.25rem;
-  }
-  .hero-kicker {
-    font-size: 0.8rem;
-    margin-bottom: 0.6rem;
-  }
+
+  /* 三行標題基礎 */
   .hero-title {
-    font-size: 2.0rem;
-    margin-bottom: 0.6rem;
+    margin: 0.35em 0;
+    font-weight: 700;
+    color: #fef4de;  /* 暖奶油白，比純白更柔 */
+    text-shadow: 0 2px 6px rgba(0,0,0,0.35);
   }
-  .hero-subtitle-en {
-    font-size: 0.85rem;
-    margin-bottom: 0.8rem;
+
+  /* ===== 文字尺寸：桌機／iPad（橫向） ===== */
+  @media (min-width: 1025px) {
+    .hero-title.line1 { font-size: 3.2rem; letter-spacing: .05em; }
+    .hero-title.line2 { font-size: 2.45rem; letter-spacing: .04em; }
+    .hero-title.line3 { font-size: 2.65rem; letter-spacing: .06em; }
+    .hero-text { bottom: 10%; }
   }
-  .hero-tagline {
-    font-size: 1.1rem;
-    margin-bottom: 0.7rem;
+
+  /* ===== iPad 直向 ===== */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .hero-title.line1 { font-size: 2.75rem; }
+    .hero-title.line2 { font-size: 2.1rem; }
+    .hero-title.line3 { font-size: 2.35rem; }
+    .hero-text { bottom: 9%; }
   }
-  .hero-lead {
-    font-size: 0.96rem;
-    line-height: 1.75;
+
+  /* ===== 手機 ===== */
+  @media (max-width: 767px) {
+    .hero-title.line1 { font-size: 1.95rem; }
+    .hero-title.line2 { font-size: 1.55rem; }
+    .hero-title.line3 {
+      font-size: 1.75rem;
+      line-height: 1.25;
+      /* 手機自動斷行（最多兩行） */
+      max-width: 90%;
+      margin: 0.45em auto;
+    }
+    .hero-text { bottom: 12%; }
   }
-}
 
 </style>
 </head>
 
 <body>
 
-<!-- ============================
-        HERO 封面段落
-============================= -->
-<section class="hero">
+<!-- ========================= -->
+<!--          HERO 封面        -->
+<!-- ========================= -->
 
-  <div class="hero-content">
+<section class="hero-wrap">
 
-    <div class="hero-kicker">QQBALL・HANDMADE</div>
+  <!-- 封面圖：直向／橫向都會自動等比完整呈現 -->
+  <img src="qqball_final_00_hero_main.png" alt="封面職人手作場景" class="hero-img" />
 
-    <h1 class="hero-title">ＱＱ球職人手作</h1>
-
-    <div class="hero-subtitle-en">SWEET & HANDMADE</div>
-
-    <div class="hero-tagline">甜的剛剛好，心的溫度。</div>
-
-    <div class="hero-lead">
-      夜色裡的攤車，一鍋油、一雙手，<br>
-      一段關於手作溫度的故事。
-    </div>
-
+  <div class="hero-text">
+    <h1 class="hero-title line1">ＱＱ球職人手作</h1>
+    <h2 class="hero-title line2">甜的剛好</h2>
+    <h2 class="hero-title line3">心的溫度</h2>
   </div>
 
 </section>
-
-</body>
-</html>
-
-body {
-  margin:0;
-  font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  line-height:1.95;
-}
-
-.container { width:min(92%,var(--max-w)); margin:auto; }
-.full-img {
-  width:100%;
-  height:auto;
-  border-radius:14px;
-  display:block;
-  margin:auto;
-}
-
-/* HERO */
-./* ===== Hero 共用設定 ===== */
-
-.hero {
-  position: relative;
-  width: 100%;
-  min-height: min(100vh, 720px);
-  background-color: #fdf1e3;          /* 背景打底色（避免載入前空白） */
-  color: #5a321b;
-  overflow: hidden;
-}
-
-/* 背景圖（直向 / 橫向自動切換） */
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.hero__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: brightness(0.96);           /* 微亮一點，讓畫面不會太悶 */
-}
-
-/* 柔和遮罩：上方稍微壓暗，下方較亮，讓字有溫度又看得清楚 */
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(32, 16, 4, 0.45) 0%,       /* 上方略暗 */
-      rgba(32, 16, 4, 0.18) 40%,      /* 中間較透，保留人物 */
-      rgba(32, 16, 4, 0.55) 100%      /* 下方暖暗，襯托油鍋與煙 */
-    );
-  mix-blend-mode: soft-light;
-}
-
-/* 文字區域 */
-.hero__content {
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  top: 36%;                           /* 把文字放在畫面偏上的三分之一，不擋地瓜球 */
-  transform: translate(-50%, -36%);
-  text-align: center;
-  padding: 0 1.75rem;
-  max-width: 40rem;
-}
-
-/* 小字標 QQBALL · HANDMADE */
-.hero__eyebrow {
-  font-size: 0.82rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-  color: rgba(255, 240, 220, 0.92);
-}
-
-/* 主標：ＱＱ球職人手作 */
-.hero__title {
-  font-size: 1.9rem;
-  letter-spacing: 0.25em;
-  margin: 0 0 0.9rem;
-  color: #fdf3e6;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
-}
-
-/* 副標英文 */
-.hero__subtitle-en {
-  font-size: 1rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  margin: 0 0 0.35rem;
-  color: #f9e0c6;
-}
-
-/* 副標中文 */
-.hero__subtitle-zh {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin: 0 0 0.75rem;
-  color: #f6c69a;
-}
-
-/* 故事引句 */
-.hero__lead {
-  font-size: 0.92rem;
-  line-height: 1.9;
-  margin: 0;
-  color: #fbe9d5;
-}
-
-/* ===== RWD：大螢幕優化（iPad 橫向 / 桌機） ===== */
-
-@media (min-width: 900px) {
-  .hero {
-    min-height: 80vh;
-  }
-
-  .hero__content {
-    max-width: 44rem;
-    top: 40%;                         /* 再稍微往上，讓整體更平衡 */
-    transform: translate(-50%, -40%);
-  }
-
-  .hero__title {
-    font-size: 2.35rem;
-  }
-
-  .hero__subtitle-en {
-    font-size: 1.05rem;
-  }
-
-  .hero__subtitle-zh {
-    font-size: 1.15rem;
-  }
-
-  .hero__lead {
-    font-size: 1rem;
-  }
-}
-
-/* ===== RWD：小螢幕（手機）微調 ===== */
-
-@media (max-width: 480px) {
-  .hero {
-    min-height: 100vh;
-  }
-
-  .hero__content {
-    top: 33%;                         /* 手機畫面再往上，避免碰到油鍋 */
-    transform: translate(-50%, -33%);
-    padding: 0 1.25rem;
-  }
-
-  .hero__title {
-    font-size: 1.7rem;
-    letter-spacing: 0.18em;
-  }
-
-  .hero__subtitle-en {
-    font-size: 0.9rem;
-    letter-spacing: 0.22em;
-  }
-
-  .hero__subtitle-zh {
-    font-size: 0.98rem;
-  }
-
-  .hero__lead {
-    font-size: 0.86rem;
-  }
-}
-
-/* 段落 */
-section { margin:3.2rem auto; }
-h3 {
-  font-size:var(--title-m);
-  margin-bottom:.6rem;
-  color:var(--ink-soft);
-  border-left:6px solid var(--accent);
-  padding-left:.6rem; font-weight:800;
-}
-p { font-size:var(--text-m); color:var(--ink-soft); margin:.9rem 0; }
-
-/* Extra */
-.extra-block {
-  background:#fdf4ea;
-  padding:2rem 1.4rem;
-  border-radius:14px;
-  margin-top:3.5rem;
-}
-
-/* 分享 */
-.share {
-  text-align:center;
-  margin-top:3.8rem;
-  padding:2.4rem 1.4rem;
-  background:#fdf4ea;
-  border-radius:16px;
-}
-.share-buttons {
-  margin-top:1.6rem;
-  display:flex; justify-content:center; gap:16px;
-}
-.share-buttons a {
-  width:60px; height:60px;
-  border-radius:50%;
-  display:flex; justify-content:center; align-items:center;
-  background:#ccc; color:#fff;
-  font-size:1.8rem;
-  text-decoration:none;
-}
-.btn-line{ background:#00c300; }
-.btn-fb{ background:#1877f2; }
-.btn-th{ background:#000; }
-
-/* Footer */
-footer {
-  margin-top:4rem;
-  padding:2rem 1rem 2.8rem;
-  text-align:center;
-  font-size:var(--text-s);
-  color:var(--ink-soft);
-}
-footer a { color:var(--ink-soft); }
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<!-- Hero：ＱＱ球職人手作 -->
-<header class="hero">
-  <picture class="hero__bg">
-    <!-- 橫向螢幕：用橫向封面 -->
-    <source srcset="qqball_final_00_hero_scene_v2.png"
-            media="(min-aspect-ratio: 4/3)">
-    <!-- 直向螢幕（手機 / 直向 iPad）：用直向封面 -->
-    <img src="qqball_final_00_hero_main.png"
-         alt="夜色街頭的QQ球職人，在鍋邊專注翻動地瓜球"
-         loading="eager">
-  </picture>
-
-  <!-- 柔和遮罩，讓字與畫面融合 -->
-  <div class="hero__overlay"></div>
-
-  <!-- 文字內容 -->
-  <div class="hero__content">
-    <div class="hero__eyebrow">QQBALL · HANDMADE</div>
-    <h1 class="hero__title">ＱＱ球職人手作</h1>
-    <p class="hero__subtitle-en">Sweet &amp; Handmade</p>
-    <p class="hero__subtitle-zh">甜的剛剛好，心的溫度。</p>
-    <p class="hero__lead">
-      夜色裡的攤車，一鍋油、一雙手，一段關於手作溫度的故事。
-    </p>
-  </div>
-</header>
-<!-- 創作說明 -->
-<section>
-  <h3>📜 創作說明</h3>
-  <p>本作品為個人設計與文案練習。「ＱＱ球職人手作」為虛構主題，以插畫、敘事與品牌氛圍，探索職人精神 × 手作溫度 × 敘事美學的可能性。</p>
-  <p>這不是商業作品，而是一份對「手作」的喜愛與致敬。  
-  如果這些畫面，能在您的日常裡留下一個柔軟的瞬間，  
-  那便是這份創作最想傳遞的溫度。</p>
-</section>
-
-<!-- 前言 -->
-<section>
-  <h3>🌤 前言</h3>
-  <p>傍晚的淡水街角，總飄著一股熟悉的香味——  
-  金黃地瓜球剛起鍋的聲音，像日常裡最溫柔的問候。</p>
-
-  <p>故事從一鍋油開始，  
-  也從一雙願意把簡單日常做得更好的手開始。</p>
-
-  <p>請跟我一起靠近這台小攤車；  
-  看看一個職人，是如何把每一件小事做到恰如其分。</p>
-</section>
-
-<!-- 01 -->
-<section>
-  <h3>01｜天氣轉涼的那天</h3>
-  <img src="qqball_final_01_story_frypan.png" class="full-img">
-
-  <p>空氣開始變得柔軟，淡水街頭的風也多了幾分涼意。  
-  就在轉角，一陣甜香穿過人群——  
-  那是剛起鍋的地瓜球，金黃、滾燙，像一顆顆小太陽，在油鍋裡輕輕跳動。</p>
-
-  <p>我忍不住停下腳步，看著油光翻滾、聽著細碎的滋滋聲。  
-  他站在鍋前，動作穩定而沉著，像在傾聽油溫的呼吸；  
-  每一次翻動，都凝著長年的累積與手感。</p>
-
-  <p>他總會把第一次起鍋的地瓜球留給自己，  
-  不是為了試味道，而是為了確認——  
-  「今天的手感，依舊沒變。」</p>
-
-  <p>那一瞬間，我忽然明白，  
-  這香氣，不只是味道，而是一種信念。</p>
-</section>
-
-<!-- 02 -->
-<section>
-  <h3>02｜不只是地瓜球</h3>
-  <img src="qqball_final_02_story_dough.png" class="full-img">
-
-  <p>每天清晨，他挑地瓜、削皮、切塊，  
-  用手去感受濕度、纖維與甜度。  
-  粉糰也堅持用手揉——  
-  「機器做得快，但味道會少了點靈魂。」他說。</p>
-
-  <p>每一次按壓都在確認彈性；  
-  每一次下鍋，都聽著油泡從急促轉為溫和——  
-  那是地瓜球「準備好了」的訊號。</p>
-
-  <p>在他眼裡，這不是點心，  
-  而是一份每天必須做到「問心無愧」的用心。</p>
-</section>
-
-<!-- 03 -->
-<section>
-  <h3>03｜手的溫度</h3>
-  <img src="qqball_final_03_story_hands.png" class="full-img">
-
-  <p>他的手粗糙卻穩定，  
-  像是記住了時間、油溫、粉糰的性子。</p>
-
-  <p>翻動、提起、放下——  
-  每個動作都沉著、不急不躁，像在照顧某件重要的事情。</p>
-
-  <p>粉糰回彈的力道、油泡變緩的瞬間、溫度剛剛好的那一刻——  
-  都藏在指尖裡。</p>
-
-  <p>我看著那雙被歲月磨亮的手，忽然覺得世界慢了下來。  
-  溫度從鍋裡溢出，也從手上溢出。</p>
-
-  <p>那，是屬於職人的語言。</p>
-</section>
-
-<!-- 04 -->
-<section>
-  <h3>04｜夜色裡的攤車</h3>
-  <img src="qqball_final_04_story_nightcart.png" class="full-img">
-
-  <p>夜色漸深，街邊的風帶來微微的寒意。  
-  他仍守在那口鍋前，油面上滾動着與夜色不同的暖流。</p>
-
-  <p>有人說他太固執，他只是笑笑：  
-  「這樣，才像我啊。」</p>
-
-  <p>那一刻我懂了——  
-  職人的溫度，不在火候，而在用心。</p>
-</section>
-
-<!-- 05 -->
-<section>
-  <h3>05｜那一顆記憶裡的香氣</h3>
-  <img src="qqball_final_05_story_warmbag.png" class="full-img">
-
-  <p>熱騰騰的地瓜球被裝進牛皮紙袋，  
-  暖氣蒸騰，我接過的瞬間，手也跟著一起暖和了起來。</p>
-
-  <p>那香氣在夜裡飄散，  
-  那溫度在記憶裡停留。</p>
-
-  <p>吃著那袋地瓜球時，我忽然覺得——  
-  最美的日常，是被微小的用心堆起來的。</p>
-
-  <p>這份甜，不只是味道，  
-  而是一個人做事的方式。</p>
-</section>
-
-<!-- Extra -->
-<section class="extra-block">
-  <h3>🌟 那些靠得更近的職人時刻</h3>
-
-  <p>這裡放著幾張「更貼近的視角」。  
-  有些畫面無需言語，它們自己會說話——  
-  像油花跳起時的亮、粉糰成形時的柔、  
-  夜氣散開時的緩，以及紙袋被暖光照亮的那一刻。</p>
-
-  <p>還有那個夜裡的背影：  
-  一個人、一鍋油、一份被堅持守護的日常。</p>
-
-  <p>或許，這些不被察覺的小瞬間，  
-  正是手作最動人的地方。</p>
-
-  <img src="qqball_final_extra_01_frypan_closeup.png" class="full-img">
-  <img src="qqball_final_extra_02_dough_closeup.png" class="full-img">
-  <img src="qqball_final_extra_03_frypan_night.png" class="full-img">
-  <img src="qqball_final_extra_04_cart_night_atmos.png" class="full-img">
-  <img src="qqball_final_extra_05_bag_glow_closeup.png" class="full-img">
-</section>
-
-<!-- 幕後手記 -->
-<section>
-  <h3>🎬 幕後手記</h3>
-  <p>這個作品獻給所有把「平凡的事」做到不平凡的人。  
-  那些反覆的步驟、那些不假手於機器的堅持，  
-  都是這個世界最微小卻最珍貴的溫度。</p>
-
-  <p>願您在閱讀的時候，  
-  也能想起某個用心做事的人——  
-  或想起，自己曾經那麼認真過。</p>
-</section>
-
-<!-- 分享區 -->
-<section class="share">
-  <h3>🌿 ～ 有些溫度，只能用心感受 ～</h3>
-  <p>ＱＱ球職人手作，記錄剛剛好的甜。</p>
-
-  <p>📱 想把這份暖意分享給誰嗎？  
-  用下方的按鈕傳遞出去吧！</p>
-
-  <p>分享，是一種溫度，  
-  讓香氣延續，也讓故事被記住。</p>
-
-  <div class="share-buttons">
-    <a class="btn-line"
-       href="https://line.me/R/msg/text/?一袋剛起鍋的甜，一段關於手作的溫度。%0A我的第一個網頁作品，邀您一起看看。%0A👉 https://q-qball.vercel.app/"
-       target="_blank">L</a>
-
-    <a class="btn-fb"
-       href="https://www.facebook.com/sharer/sharer.php?u=https://q-qball.vercel.app/"
-       target="_blank">f</a>
-
-    <a class="btn-th"
-       href="https://www.threads.net/intent/post?text=一袋剛起鍋的甜，一段關於手作的溫度。%0A我的第一個網頁作品，邀您一起看看。%0A👉 https://q-qball.vercel.app/"
-       target="_blank">@</a>
-  </div>
-</section>
-
-</div>
-
-<!-- footer -->
-<footer>
-  © 2025 HSUAN~ × ChatGPT（with GPT-5.1）  
-  <br>🫶 用手溫，做出心的味道。  
-  <br><br>
-  📷 <a href="https://instagram.com/hsuan9456" target="_blank">@hsuan9456</a>  
-  　·　💬 <a href="https://www.threads.net/@hsuan9456" target="_blank">@hsuan9456</a>  
-  　·　🌐 <a href="https://www.facebook.com/gu.rui.si" target="_blank">facebook.com/gu.rui.si</a>
-</footer>
 
 </body>
 </html>
