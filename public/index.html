@@ -34,10 +34,10 @@
       padding-bottom: 3rem;
     }
 
-    /* ---------------------- Hero A：上圖下字版 ---------------------- */
+    /*/* ---------------------- Hero B：標題卡片版 ---------------------- */
 .hero {
-  padding: 2.4rem 0 1.6rem;
-  background: #fff7ef;
+  padding: 2.4rem 0 1.9rem;
+  background: radial-gradient(circle at top, #fff4e6 0%, #fff7ef 40%, #fff5eb 100%);
 }
 
 .hero-inner {
@@ -47,53 +47,56 @@
 
 .hero-visual {
   text-align: center;
-  margin: 0 auto 1.6rem;
+  margin: 0 auto 1.5rem;
 }
 
 .hero-img {
   max-width: 100%;
-  max-height: min(70vh, 520px);
+  max-height: min(68vh, 500px);
   width: auto;
   height: auto;
-  object-fit: contain; /* 不裁圖，完整呈現 */
-  border-radius: 16px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
-/* 標題區塊 */
-.hero-text-block {
+/* 卡片式標題區 */
+.hero-text-card {
+  max-width: 720px;
+  margin: 0 auto;
   text-align: center;
+  padding: 1.1rem 1.6rem 1.3rem;
+  background: rgba(255, 248, 237, 0.95);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(214, 176, 133, 0.45);
   color: #4a2c1b;
-  padding: 0 1rem 0.4rem;
 }
 
 .hero-title {
-  font-size: clamp(2.1rem, 3.2vw, 2.6rem);
-  letter-spacing: 0.2em;
+  font-size: clamp(2.1rem, 3.1vw, 2.6rem);
+  letter-spacing: 0.18em;
   font-weight: 800;
-  margin-bottom: 0.6rem;
-}
-
-.hero-subtitle {
-  font-size: clamp(1.4rem, 2.2vw, 1.7rem);
-  font-weight: 600;
-  color: #c0692f;
   margin-bottom: 0.4rem;
 }
 
-.hero-tagline {
-  font-size: clamp(1.05rem, 1.7vw, 1.15rem);
-  color: #7b5a3c;
-  margin-top: 0.25rem;
+.hero-subtitle {
+  font-size: clamp(1.35rem, 2.1vw, 1.65rem);
+  font-weight: 600;
+  color: #c0692f;
+  margin-bottom: 0.2rem;
 }
 
-/* 平板以上稍微拉寬整體排版 */
+.hero-tagline {
+  font-size: clamp(1.02rem, 1.7vw, 1.1rem);
+  color: #7b5a3c;
+  margin-top: 0.1rem;
+  line-height: 1.8;
+}
+
 @media (min-width: 834px) {
   .hero {
-    padding: 2.8rem 0 2rem;
-  }
-  .hero-inner {
-    padding: 0 1.5rem;
+    padding: 2.8rem 0 2.2rem;
   }
 }
     /* ----------------------------------------------
@@ -247,7 +250,7 @@
       >
     </div>
 
-    <div class="hero-text-block">
+    <div class="hero-text-card">
       <h1 class="hero-title">ＱＱ球職人手作</h1>
       <p class="hero-subtitle">甜的剛好，心的溫度。</p>
       <p class="hero-tagline">
@@ -256,7 +259,6 @@
     </div>
   </div>
 </section>
-
     <!-- ===================================================== -->
     <!--                     創作說明                          -->
     <!-- ===================================================== -->
