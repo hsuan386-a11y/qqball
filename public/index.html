@@ -1,477 +1,534 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ＱＱ球職人手作｜夜色裡的攤車，一鍋油、一雙手，一段故事。</title>
 
-<title>ＱＱ球職人手作｜甜的剛好，心的溫度。</title>
-<meta name="description" content="夜色裡的攤車，一鍋油、一雙手，一段關於手作溫度的故事。">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="ＱＱ球職人手作">
-<meta property="og:url" content="https://q-qball.vercel.app/">
-<meta property="og:title" content="ＱＱ球職人手作｜甜的剛好，心的溫度。">
-<meta property="og:description" content="夜色裡的攤車，一鍋油、一雙手，一段關於手作溫度的故事。">
-<meta property="og:image" content="qqball_final_share_fb.png">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ＱＱ球職人手作｜甜的剛好，心的溫度。">
-<meta name="twitter:description" content="夜色裡的攤車，一鍋油、一雙手，一段關於手作溫度的故事。">
-<meta name="twitter:image" content="qqball_final_share_fb.png">
-
-<style>
-:root {
-  --ink:#37281c;
-  --ink-soft:#4b3a2b;
-  --bg:#fff8f1;
-  --accent:#c67a42;
-  --max-w:880px;
-  --title-xl:clamp(2.5rem,4vw,3.8rem);
-  --title-l:clamp(2rem,3vw,2.7rem);
-  --title-m:clamp(1.7rem,2.4vw,2.1rem);
-  --text-l:clamp(20px,2.2vw,22px);
-  --text-m:clamp(19px,2vw,20px);
-  --text-s:clamp(17px,1.8vw,19px);
-}
-
-body {
-  margin:0;
-  font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  line-height:1.95;
-}
-
-.container { width:min(92%,var(--max-w)); margin:auto; }
-.full-img {
-  width:100%;
-  height:auto;
-  border-radius:14px;
-  display:block;
-  margin:auto;
-}
-
-/* HERO */
-.hero {
-  position:relative;
-  width:100%;
-  height:70vh;
-  max-height:750px;
-  background:url('qqball_final_00_hero_main.png') center/cover no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
-  padding-bottom:3.5rem;
-}
-.hero::before {
-  content:"";
-  position:absolute; inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,0) 40%,rgba(0,0,0,0.55));
-}
-.hero-text {
-  color:#fff; text-align:center; position:relative;
-}
-.hero-text h1 { font-size:var(--title-xl); margin-bottom:.4em; font-weight:800; }
-.hero-text .sub { font-size:var(--title-l); margin-bottom:.4em; font-weight:700; }
-.hero-text .cap { font-size:var(--text-l); opacity:.95; }
-
-/* 段落 */
-section { margin:3.2rem auto; }
-h3 {
-  font-size:var(--title-m);
-  margin-bottom:.6rem;
-  color:var(--ink-soft);
-  border-left:6px solid var(--accent);
-  padding-left:.6rem; font-weight:800;
-}
-p { font-size:var(--text-m); color:var(--ink-soft); margin:.9rem 0; }
-
-    /* ========================= */
-    /*        Extra 區塊         */
-    /* ========================= */
-    .extra{
-      margin: calc(var(--block-gap) + .5rem) auto;
-      padding: 2.2rem 1.6rem 2rem;
-      border-radius: 18px;
-      background: radial-gradient(circle at 0 0, rgba(255,230,200,.45), transparent 55%),
-                  radial-gradient(circle at 100% 100%, rgba(210,160,120,.35), transparent 55%),
-                  #fdf4ea;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  <style>
+    /* ----------------------------------------------
+       全站 Reset
+    ---------------------------------------------- */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f9f6f2;
+      color: #4a3c2b;
+      font-family: "Noto Serif TC", serif;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    img {
+      width: 100%;
+      display: block;
     }
 
-    .extra h3{
-      font-weight: 800;
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .container {
+      width: min(92%, 780px);
+      margin: auto;
+      padding-bottom: 3rem;
+    }
+
+    /* ----------------------------------------------
+       Hero 封面（V4）
+    ---------------------------------------------- */
+    .hero {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero img {
+      width: 100%;
+      filter: brightness(0.72);
+    }
+
+    .hero-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff8f0;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.45);
+      font-family: "Noto Serif TC", serif;
+      width: 90%;
+    }
+
+    .hero-title h1 {
+      font-size: 2rem;
+      margin-bottom: .4rem;
+    }
+
+    .hero-title h2 {
+      font-size: 1.25rem;
+      margin-bottom: .4rem;
+      font-weight: 500;
+    }
+
+    .hero-title h3 {
+      font-size: 1.05rem;
+      opacity: .95;
+      font-weight: 500;
+    }
+
+    @media (min-width: 780px) {
+      .hero-title h1 { font-size: 2.6rem; }
+      .hero-title h2 { font-size: 1.6rem; }
+      .hero-title h3 { font-size: 1.25rem; }
+    }
+
+    /* ----------------------------------------------
+       文字區域（全站）
+    ---------------------------------------------- */
+    section {
+      margin-bottom: 3.4rem;
+    }
+
+    section h3 {
       font-size: 1.3rem;
-      color: #5b3b1a;
-      text-align: left;
+      color: #7a5a44;
+      margin-bottom: .6rem;
+    }
+
+    section p {
+      font-size: 1.07rem;
+      margin: .7rem 0;
+      text-align: justify;
+    }
+
+    @media (min-width: 820px) {
+      section p {
+        font-size: 1.12rem;
+      }
+    }
+
+    /* ----------------------------------------------
+       內文大圖（等比縮小、完整呈現）
+    ---------------------------------------------- */
+    .story-img {
+      width: 100%;
+      margin: 1.6rem 0 1rem;
+      border-radius: 8px;
+    }
+
+    /* ----------------------------------------------
+       Extra 區（V5：沉浸式大片 + 微縮 +留白）
+    ---------------------------------------------- */
+    .extra-block {
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .extra-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: .4rem;
+      color: #6b4e36;
+    }
+
+    .extra-desc {
+      width: min(90%, 720px);
+      margin: auto;
+      margin-bottom: 1.6rem;
+      font-size: 1.05rem;
+      color: #5b4636;
+    }
+
+    .extra-img {
+      width: 92%;
+      margin: 1.8rem auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+
+    /* ----------------------------------------------
+       分享區塊
+    ---------------------------------------------- */
+    .share-block {
+      margin-top: 2rem;
+      text-align: center;
+      padding: 2.2rem 0 1.6rem;
+      border-top: 1px solid #e6d9cf;
+    }
+
+    .share-block h3 {
+      font-size: 1.25rem;
+      margin-bottom: .6rem;
+      color: #7a5a44;
+    }
+
+    .share-block p {
+      font-size: 1.05rem;
       margin-bottom: .9rem;
     }
 
-    .extra-intro{
-      color: var(--ink-soft);
-      font-size: 1.02rem;
-      line-height: 1.9;
-      margin-bottom: 1.6rem;
+    .share-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: .8rem;
     }
 
-    .extra-grid{
-      display: grid;
-      gap: 1.8rem;
+    .share-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
     }
 
-    .extra-card{
-      background: rgba(255,252,247,.92);
-      border-radius: 14px;
-      padding: 1.1rem 1.1rem 1.3rem;
-      box-shadow: 0 3px 10px rgba(0,0,0,.05);
-      overflow: hidden;
+    .btn-line {
+      background-image: url("icon_line.png");
     }
 
-    .extra-img{
-      width: 100%;
-      max-width: 720px;
-      max-height: 360px;
-      display: block;
-      margin: 0 auto .9rem;
-      border-radius: 12px;
-      object-fit: contain;   /* ✅ 不裁圖，等比完整呈現 */
+    .btn-fb {
+      background-image: url("icon_fb.png");
     }
 
-    .extra-quote{
-      color: #5b3b1a;
-      font-size: 0.98rem;
-      line-height: 1.9;
-      position: relative;
-      padding-left: 1.4rem;
+    .btn-threads {
+      background-image: url("icon_threads.png");
     }
 
-    .extra-quote::before{
-      content: "✧";
-      position: absolute;
-      left: 0;
-      top: 0.2rem;
-      font-size: 0.9rem;
-      color: var(--accent);
+    /* ----------------------------------------------
+       頁尾區塊
+    ---------------------------------------------- */
+    .footer {
+      background: #f5ede3;
+      padding: 2.8rem 1rem 2.4rem;
+      margin-top: 4rem;
+      text-align: center;
+      color: #5d4c3a;
+      border-top: 1px solid #e3d5c5;
     }
 
-    @media (min-width: 900px){
-      .extra{
-        padding: 2.4rem 2rem 2.2rem;
-      }
-      .extra-grid{
-        grid-template-columns: repeat(2, minmax(0,1fr));
-      }
-      .extra-card:last-child{
-        grid-column: 1 / -1;           /* 最後一張（紙袋）單獨置中 */
-        max-width: 640px;
-        margin: 0 auto;
-      }
-      .extra-quote{
-        font-size: 1rem;
-      }
+    .footer-wrap {
+      width: min(92%, 760px);
+      margin: auto;
+      line-height: 1.8;
     }
 
-/* 分享 */
-.share {
-  text-align:center;
-  margin-top:3.8rem;
-  padding:2.4rem 1.4rem;
-  background:#fdf4ea;
-  border-radius:16px;
-}
-.share-buttons {
-  margin-top:1.6rem;
-  display:flex; justify-content:center; gap:16px;
-}
-.share-buttons a {
-  width:60px; height:60px;
-  border-radius:50%;
-  display:flex; justify-content:center; align-items:center;
-  background:#ccc; color:#fff;
-  font-size:1.8rem;
-  text-decoration:none;
-}
-.btn-line{ background:#00c300; }
-.btn-fb{ background:#1877f2; }
-.btn-th{ background:#000; }
+    .footer-brand {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: .6rem;
+    }
 
-/* Footer */
-footer {
-  margin-top:4rem;
-  padding:2rem 1rem 2.8rem;
-  text-align:center;
-  font-size:var(--text-s);
-  color:var(--ink-soft);
-}
-footer a { color:var(--ink-soft); }
-</style>
+    .footer-tagline {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #7a5a44;
+    }
+
+    .footer-links{
+      font-size:.95rem;
+      display:flex;
+      justify-content:center;
+      gap:.6rem;
+    }
+
+    .footer-links a{
+      text-decoration:none;
+      color:#6b4e36;
+    }
+
+    .footer-links a:hover{
+      text-decoration:underline;
+    }
+
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>ＱＱ球職人手作</h1>
-    <div class="sub">甜的剛剛好，心的溫度。</div>
-    <div class="cap">夜色裡的攤車，一鍋油、一雙手，一段故事。</div>
-  </div>
-</section>
+  <!-- ===================================================== -->
+  <!--                     Hero 封面（V4）                    -->
+  <!-- ===================================================== -->
+  <header class="hero">
+    <img src="qqball_final_00_hero_main.png" alt="主封面插圖">
+    <div class="hero-title">
+      <h1>ＱＱ球職人手作</h1>
+      <h2>甜的剛好，心的溫度。</h2>
+      <h3>夜色裡的攤車，一鍋油、一雙手，一段故事。</h3>
+    </div>
+  </header>
 
-<div class="container">
+  <div class="container">
 
-<!-- 創作說明 -->
-<section>
-  <h3>📜 創作說明</h3>
-  <p>本作品為個人設計與文案練習。「ＱＱ球職人手作」為虛構主題，以插畫、敘事與品牌氛圍，探索職人精神 × 手作溫度 × 敘事美學的可能性。</p>
-  <p>這不是商業作品，而是一份對「手作」的喜愛與致敬。  
-  如果這些畫面，能在您的日常裡留下一個柔軟的瞬間，  
-  那便是這份創作最想傳遞的溫度。</p>
-</section>
+    <!-- ===================================================== -->
+    <!--                     創作說明                          -->
+    <!-- ===================================================== -->
+    <section>
+      <h3>📜 創作說明</h3>
 
-<!-- 前言 -->
-<section>
-  <h3>🌤 前言</h3>
-  <p>傍晚的淡水街角，總飄著一股熟悉的香味——  
-  金黃地瓜球剛起鍋的聲音，像日常裡最溫柔的問候。</p>
+      <p>
+        本作品為個人設計與文案練習。「ＱＱ球職人手作」為虛構主題，
+        以插畫、敘事與品牌氛圍，探索「職人精神 × 手作溫度 × 敘事美學」的可能性。
+      </p>
 
-  <p>故事從一鍋油開始，  
-  也從一雙願意把簡單日常做得更好的手開始。</p>
+      <p>
+        這不是商業作品，而是一份對「手作」的喜愛與致敬。
+        如果這些畫面，能在您的日常裡留下一點柔軟，
+        那便是這份創作最想傳遞的溫度。
+      </p>
+    </section>
 
-  <p>請跟我一起靠近這台小攤車；  
-  看看一個職人，是如何把每一件小事做到恰如其分。</p>
-</section>
+    <!-- ===================================================== -->
+    <!--                       前言                            -->
+    <!-- ===================================================== -->
+    <section>
+      <h3>🌤 前言</h3>
 
-<!-- 01 -->
-<section>
-  <h3>01｜天氣轉涼的那天</h3>
-  <img src="qqball_final_01_story_frypan.png" class="full-img">
+      <p>
+        傍晚的淡水街角，總飄著一股熟悉的香味——  
+        金黃地瓜球剛起鍋的聲音，像日常裡最溫柔的問候。
+      </p>
 
-  <p>空氣開始變得柔軟，淡水街頭的風也多了幾分涼意。  
-  就在轉角，一陣甜香穿過人群——  
-  那是剛起鍋的地瓜球，金黃、滾燙，像一顆顆小太陽，在油鍋裡輕輕跳動。</p>
+      <p>
+        故事從一鍋油開始，  
+        也從一雙願意把簡單的日常做得更好的手開始。
+      </p>
 
-  <p>我忍不住停下腳步，看著油光翻滾、聽著細碎的滋滋聲。  
-  他站在鍋前，動作穩定而沉著，像在傾聽油溫的呼吸；  
-  每一次翻動，都凝著長年的累積與手感。</p>
+      <p>
+        請跟我一起靠近這台小攤車；  
+        看看一個職人，是如何把每一件小事做到恰如其分。
+      </p>
+    </section>
 
-  <p>他總會把第一次起鍋的地瓜球留給自己，  
-  不是為了試味道，而是為了確認——  
-  「今天的手感，依舊沒變。」</p>
+    <!-- ===================================================== -->
+    <!--                    01｜天氣轉涼的那天                -->
+    <!-- ===================================================== -->
+    <section>
+      <h3>01｜天氣轉涼的那天</h3>
 
-  <p>那一瞬間，我忽然明白，  
-  這香氣，不只是味道，而是一種信念。</p>
-</section>
+      <img class="story-img" src="qqball_final_01_story_frypan.png">
 
-<!-- 02 -->
-<section>
-  <h3>02｜不只是地瓜球</h3>
-  <img src="qqball_final_02_story_dough.png" class="full-img">
+      <p>
+        空氣開始變得柔軟，淡水街頭的風也多了幾分涼意。  
+        就在轉角，一陣甜香穿過人群——  
+        那是剛起鍋的地瓜球，金黃、滾燙，像一顆顆小太陽，在油鍋裡輕輕跳動。
+      </p>
 
-  <p>每天清晨，他挑地瓜、削皮、切塊，  
-  用手去感受濕度、纖維與甜度。  
-  粉糰也堅持用手揉——  
-  「機器做得快，但味道會少了點靈魂。」他說。</p>
+      <p>
+        我忍不住停下腳步，看著油光翻滾、聽著滋滋作響。  
+        他站在鍋前，動作穩定而沉著，像在傾聽油溫的呼吸；  
+        每一次翻動，都凝著長年的累積與手感。
+      </p>
 
-  <p>每一次按壓都在確認彈性；  
-  每一次下鍋，都聽著油泡從急促轉為溫和——  
-  那是地瓜球「準備好了」的訊號。</p>
+      <p>
+        他總會把第一次起鍋的地瓜球留給自己，  
+        不是為了試味道，而是為了確認——  
+        「今天的手感，依舊沒變。」
+      </p>
 
-  <p>在他眼裡，這不是點心，  
-  而是一份每天必須做到「問心無愧」的用心。</p>
-</section>
+      <p>
+        那一瞬間，我忽然明白，  
+        這香氣，不只是味道，而是一種信念。
+      </p>
+    </section>
 
-<!-- 03 -->
-<section>
-  <h3>03｜手的溫度</h3>
-  <img src="qqball_final_03_story_hands.png" class="full-img">
+    <!-- ===================================================== -->
+    <!--                02｜不只是地瓜球                      -->
+    <!-- ===================================================== -->
+    <section>
+      <h3>02｜不只是地瓜球</h3>
 
-  <p>他的手粗糙卻穩定，  
-  像是記住了時間、油溫、粉糰的性子。</p>
+      <img class="story-img" src="qqball_final_02_story_dough.png">
 
-  <p>翻動、提起、放下——  
-  每個動作都沉著、不急不躁，像在照顧某件重要的事情。</p>
+      <p>
+        每天清晨，他挑地瓜、削皮、切塊，  
+        用手去感受濕度、纖維與甜度。  
+        粉糰也堅持用手揉——  
+        「機器做得快，但味道會少了點靈魂。」他說。
+      </p>
 
-  <p>粉糰回彈的力道、油泡變緩的瞬間、溫度剛剛好的那一刻——  
-  都藏在指尖裡。</p>
+      <p>
+        每一次按壓都在確認彈性；  
+        每一次下鍋，都聽著油泡從急促轉為溫和——  
+        那是地瓜球「準備好了」的訊號。
+      </p>
 
-  <p>我看著那雙被歲月磨亮的手，忽然覺得世界慢了下來。  
-  溫度從鍋裡溢出，也從手上溢出。</p>
+      <p>
+        在他眼裡，這不是點心，  
+        而是一份每天必須做到「問心無愧」的用心。
+      </p>
 
-  <p>那，是屬於職人的語言。</p>
-</section>
+    </section>
 
-<!-- 04 -->
-<section>
-  <h3>04｜夜色裡的攤車</h3>
-  <img src="qqball_final_04_story_nightcart.png" class="full-img">
+    <!-- ===================================================== -->
+    <!--                    03｜手的溫度                      -->
+    <!-- ===================================================== -->
+    <section>
+      <h3>03｜手的溫度</h3>
 
-  <p>夜色漸深，街邊的風帶來微微的寒意。  
-  他仍守在那口鍋前，油面上滾動着與夜色不同的暖流。</p>
+      <img class="story-img" src="qqball_final_03_story_hands.png">
 
-  <p>有人說他太固執，他只是笑笑：  
-  「這樣，才像我啊。」</p>
+      <p>
+        他的手粗糙卻穩定，  
+        像記住了時間、油溫、粉糰的性子。
+      </p>
 
-  <p>那一刻我懂了——  
-  職人的溫度，不在火候，而在用心。</p>
-</section>
+      <p>
+        翻動、提起、放下——  
+        每個動作都沉著、不急不躁，  
+        像在照顧某件重要的事情。
+      </p>
 
-<!-- 05 -->
-<section>
-  <h3>05｜那一顆記憶裡的香氣</h3>
-  <img src="qqball_final_05_story_warmbag.png" class="full-img">
+      <p>
+        「手能感覺到機器感覺不到的細節。」  
+        粉糰回彈的弧度、油泡變緩的瞬間、  
+        溫度剛剛好的那一刻——  
+        都藏在他的指尖裡。
+      </p>
 
-  <p>熱騰騰的地瓜球被裝進牛皮紙袋，  
-  暖氣蒸騰，我接過的瞬間，手也跟著一起暖和了起來。</p>
+      <p>
+        那一刻，我忽然覺得世界慢了下來。  
+        那，是屬於職人的語言。
+      </p>
+    </section>
 
-  <p>那香氣在夜裡飄散，  
-  那溫度在記憶裡停留。</p>
+    <!-- ===================================================== -->
+    <!--                04｜夜色裡的攤車                      -->
+    <!-- ===================================================== -->
+    <section>
+      <h3>04｜夜色裡的攤車</h3>
 
-  <p>吃著那袋地瓜球時，我忽然覺得——  
-  最美的日常，是被微小的用心堆起來的。</p>
+      <img class="story-img" src="qqball_final_04_story_nightcart.png">
 
-  <p>這份甜，不只是味道，  
-  而是一個人做事的方式。</p>
-</section>
+      <p>
+        夜色漸深，街邊的風已有了明顯寒意。  
+        但攤車旁，卻始終亮著一盞暖光。
+      </p>
 
-    <!-- Extra｜那些靠得更近的職人時刻 -->
-    <section class="extra" aria-labelledby="extra">
-      <h3 id="extra">🌟 Extra｜那些靠得更近的職人時刻</h3>
+      <p>
+        人潮偶爾多、偶爾少，  
+        他始終以同樣的節奏翻動、起鍋、裝袋——  
+        像守著某種屬於自己的秩序。
+      </p>
 
-      <p class="extra-intro">
-        有些細節，只有靠得很近才看得見；<br>
+      <p>
+        那一刻我懂了——  
+        職人的溫度，不在火候，而在用心。
+      </p>
+    </section>
+
+    <!-- ===================================================== -->
+    <!--                05｜那一顆記憶裡的香氣                -->
+    <!-- ===================================================== -->
+    <section>
+      <h3>05｜那一顆記憶裡的香氣</h3>
+
+      <img class="story-img" src="qqball_final_05_story_warmbag.png">
+
+      <p>
+        熱騰騰的地瓜球被裝進牛皮紙袋，  
+        暖氣蒸騰，我接過的瞬間，手也一起暖了起來。
+      </p>
+
+      <p>
+        那香氣在夜裡散開，  
+        那溫度在記憶裡停留。
+      </p>
+
+      <p>
+        最美的日常，往往是被微小的用心堆起來的。  
+        這份甜，不只是味道，而是一個人做事的方式。
+      </p>
+    </section>
+
+    <!-- ===================================================== -->
+    <!--                   Extra 區（V5）                      -->
+    <!-- ===================================================== -->
+    <section class="extra-block">
+
+      <h3 class="extra-title">🌟 那些更靠近的職人時刻</h3>
+
+      <p class="extra-desc">
+        有些細節，只有靠得很近才看得見；  
         而那些看不見的努力，往往是最值得被記住的。
       </p>
 
-      <div class="extra-grid">
+      <img class="extra-img" src="qqball_final_extra_01_frypan_closeup.png">
 
-        <!-- Extra 01：油鍋特寫 -->
-        <article class="extra-card">
-          <figure>
-            <img
-              class="extra-img"
-              src="./qqball_final_extra_01_frypan_closeup.png"
-              alt="油鍋裡金黃地瓜球與油花跳動的特寫畫面"
-              loading="lazy"
-            >
-          </figure>
-          <p class="extra-quote">
-            「有些溫度，只有靠近一點，才看得清楚它的跳動。」
-          </p>
-        </article>
+      <img class="extra-img" src="qqball_final_extra_02_dough_closeup.png">
 
-        <!-- Extra 02：粉糰特寫 -->
-        <article class="extra-card">
-          <figure>
-            <img
-              class="extra-img"
-              src="./qqball_final_extra_02_dough_closeup.png"
-              alt="雙手搓揉地瓜粉糰的近距離畫面"
-              loading="lazy"
-            >
-          </figure>
-          <p class="extra-quote">
-            「只有手，才能讀懂粉糰的性子；那是時間教的語言。」
-          </p>
-        </article>
+      <img class="extra-img" src="qqball_final_extra_03_frypan_night.png">
 
-        <!-- Extra 03：夜裡的油鍋光 -->
-        <article class="extra-card">
-          <figure>
-            <img
-              class="extra-img"
-              src="./qqball_final_extra_03_frypan_night.png"
-              alt="夜色中油鍋與油光交織的畫面"
-              loading="lazy"
-            >
-          </figure>
-          <p class="extra-quote">
-            「夜色會變，但鍋邊的光不會——有人在裡面守著。」
-          </p>
-        </article>
+      <img class="extra-img" src="qqball_final_extra_04_cart_night_atmos.png">
 
-        <!-- Extra 04：夜色攤車 -->
-        <article class="extra-card">
-          <figure>
-            <img
-              class="extra-img"
-              src="./qqball_final_extra_04_cart_night_atmos.png"
-              alt="夜裡街角的攤車與路燈氛圍"
-              loading="lazy"
-            >
-          </figure>
-          <p class="extra-quote">
-            「越是安靜的畫面，越看得見一個人做事的方式。」
-          </p>
-        </article>
+      <img class="extra-img" src="qqball_final_extra_05_bag_glow_closeup.png">
 
-        <!-- Extra 05：暖光紙袋特寫 -->
-        <article class="extra-card">
-          <figure>
-            <img
-              class="extra-img"
-              src="./qqball_final_extra_05_bag_glow_closeup.png"
-              alt="雙手捧著裝滿地瓜球的牛皮紙袋特寫"
-              loading="lazy"
-            >
-          </figure>
-          <p class="extra-quote">
-            「有些味道，不是被吃進去的，而是被記住的。」
-          </p>
-        </article>
-
-      </div>
     </section>
 
-<!-- 幕後手記 -->
-<section>
-  <h3>🎬 幕後手記</h3>
-  <p>這個作品獻給所有把「平凡的事」做到不平凡的人。  
-  那些反覆的步驟、那些不假手於機器的堅持，  
-  都是這個世界最微小卻最珍貴的溫度。</p>
+    <!-- ===================================================== -->
+    <!--                   幕後手記                           -->
+    <!-- ===================================================== -->
+    <section>
+      <h3>📒 幕後手記</h3>
 
-  <p>願您在閱讀的時候，  
-  也能想起某個用心做事的人——  
-  或想起，自己曾經那麼認真過。</p>
-</section>
+      <p>
+        這個作品獻給所有把「平凡的事」做到不平凡的人。  
+        那些反覆的步驟、那些不假手於機器的堅持，  
+        都是這個世界最微小卻最珍貴的溫度。
+      </p>
 
-<!-- 分享區 -->
-<section class="share">
-  <h3>🌿 ～ 有些溫度，只能用心感受 ～</h3>
-  <p>ＱＱ球職人手作，記錄剛剛好的甜。</p>
+      <p>
+        願您在閱讀的時候，  
+        也能想起某個用心做事的人 ——  
+        或是想起自己也曾那麼認真過。
+      </p>
+    </section>
 
-  <p>📱 想把這份暖意分享給誰嗎？  
-  用下方的按鈕傳遞出去吧！</p>
+    <!-- ===================================================== -->
+    <!--                   分享區塊                            -->
+    <!-- ===================================================== -->
+    <section class="share-block">
 
-  <p>分享，是一種溫度，  
-  讓香氣延續，也讓故事被記住。</p>
+      <h3>🌿 有些溫度，只能用心感受</h3>
 
-  <div class="share-buttons">
-    <a class="btn-line"
-       href="https://line.me/R/msg/text/?一袋剛起鍋的甜，一段關於手作的溫度。%0A我的第一個網頁作品，邀您一起看看。%0A👉 https://q-qball.vercel.app/"
-       target="_blank">L</a>
+      <p>ＱＱ球職人手作，記錄剛剛好的甜。</p>
 
-    <a class="btn-fb"
-       href="https://www.facebook.com/sharer/sharer.php?u=https://q-qball.vercel.app/"
-       target="_blank">f</a>
+      <p>📱 想把這份暖意分享給誰嗎？  
+      用下方的按鈕傳遞出去吧！</p>
 
-    <a class="btn-th"
-       href="https://www.threads.net/intent/post?text=一袋剛起鍋的甜，一段關於手作的溫度。%0A我的第一個網頁作品，邀您一起看看。%0A👉 https://q-qball.vercel.app/"
-       target="_blank">@</a>
+      <div class="share-buttons">
+        <a class="share-btn btn-line" href="https://line.me/R/msg/text/?https://q-qball.vercel.app/" target="_blank"></a>
+        <a class="share-btn btn-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://q-qball.vercel.app/" target="_blank"></a>
+        <a class="share-btn btn-threads" href="https://www.threads.net/intent/post?text=一袋剛起鍋的甜，一段關於手作的溫度。%0A我的第一個網頁作品，邀您一起看看。%0A👉 https://q-qball.vercel.app/" target="_blank"></a>
+      </div>
+
+      <p>分享，是一種溫度，  
+      讓香氣延續，也讓故事被記住。</p>
+
+    </section>
+
   </div>
-</section>
 
-</div>
+  <!-- ===================================================== -->
+  <!--                     頁尾資訊                           -->
+  <!-- ===================================================== -->
+  <footer class="footer">
+    <div class="footer-wrap">
 
-<!-- footer -->
-<footer>
-  © 2025 HSUAN~ × ChatGPT（with GPT-5.1）  
-  <br>🫶 用手溫，做出心的味道。  
-  <br><br>
-  📷 <a href="https://instagram.com/hsuan9456" target="_blank">@hsuan9456</a>  
-  　·　💬 <a href="https://www.threads.net/@hsuan9456" target="_blank">@hsuan9456</a>  
-  　·　🌐 <a href="https://www.facebook.com/gu.rui.si" target="_blank">facebook.com/gu.rui.si</a>
-</footer>
+      <p class="footer-brand">© 2025 HSUAN~ × ChatGPT（with GPT-5.1）</p>
+
+      <p class="footer-tagline">🫶 用手溫，做出心的味道。</p>
+
+      <div class="footer-links">
+        <a href="https://instagram.com/hsuan9456" target="_blank">Instagram</a>
+        <span>·</span>
+        <a href="https://www.threads.net/@hsuan9456" target="_blank">Threads</a>
+        <span>·</span>
+        <a href="https://www.facebook.com/gu.rui.si" target="_blank">Facebook</a>
+      </div>
+
+    </div>
+  </footer>
 
 </body>
 </html>
